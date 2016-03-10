@@ -1,0 +1,44 @@
+.main-screen{
+	height: 700px;
+}
+
+.main-container{
+	margin-top: 200px;
+}
+
+.main-container h1, h3{
+	margin: 50px;
+}
+
+#about{
+	margin: 80px 0px;
+}
+
+#community{
+	height:300px;
+	color: white;
+}
+
+#community p{
+	font-size: 30px;
+
+}
+
+#quote{
+	height: 200px;
+	color: white;
+}
+
+
+#btnNewSkill{
+	margin: 20px;
+	position: fixed;
+}
+
+#menuDrop{
+	margin-top: 15px;
+}
+
+#flechaDropdown{
+	margin-top: -13px;
+}

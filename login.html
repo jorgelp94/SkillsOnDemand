@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SoD Registration</title>
+	
+	<!-- CSS  -->
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  	<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  	<link href="css/registrationStyles.css" type="text/css" rel="stylesheet"/>
+	
+</head>
+<body>
+
+	<nav class="cyan darken-3">
+	    <div class="nav-wrapper container">
+	    	<a href="index.html" class="brand-logo">SkillsOnDemand</a>
+	      	
+		</div>
+	</nav>
+
+	<div id="registrationContainer" class="section">
+		<div class="container">
+			<h1>SkillsOnDemand</h1>
+			<h5>The best way to share and get skills</h5>
+		
+
+			<div class="row">
+			    <form class="col s6 offset-s3">
+			    	<div class="row">
+			        	<div class="input-field col s12">
+			          		<input placeholder="Email Address" id="email" type="text" class="validate">
+			        	</div>
+			        </div>
+			      	<div class="row">
+			        	<div class="input-field col s12">
+			          		<input placeholder="Password" id="password" type="password" class="validate">
+			        	</div>
+			      	</div>
+			      	<div class="row">
+			      		<input class="btn-large" type="button" id="loginButton" value="Login"/>
+			      		<input class="btn-large" type="button" id="registerButton" value="Register"/>
+			      	</div>
+			    </form>
+			</div>
+
+		</div>
+		
+	</div>
+
+	<!--Import jQuery before materialize.js-->
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+
+</body>
+<script type="text/javascript">
+	$( document ).on('ready', function() {
+
+		 $.ajax({
+                type: "POST",
+                url: "data/applicationLayer.php",
+                dataType: "json",
+                data: {'action':'COOKIE'},
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                success: function(jsonData) {
+                    $("#email").val(jsonData.cookieUsername);
+                },
+                error: function(errorMsg){
+                    alert(errorMsg.statusText);
+                }
+            });
+
+		$("#loginButton").on("click", function(){
+			var jsonObject = {"email": $("#email").val(),
+                               "password": $("#password").val(),
+                           	   "action": "LOGIN"};
+			$.ajax({
+              	type: 'POST',
+              	url: 'data/applicationLayer.php',
+              	data: jsonObject,
+              	dataType:'json',
+              	headers:{'Content-Type': 'application/x-www-form-urlencoded'},
+              	success: function(jsonData){
+                	alert("Welcome back " + jsonData.fName + " " + jsonData.lName);
+                	window.location.replace('searchSkills.html');
+
+              	},
+              	error: function(errorMessage){
+                	alert(errorMessage.statusText);
+              	}
+              	
+           	});
+		});
+
+
+		$("#registerButton").on("click", function(){
+			 window.location.replace("registration.html");
+		});
+	});
+</script
+</html>

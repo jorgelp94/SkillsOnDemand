@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SoD Registration</title>
+	
+	<!-- CSS  -->
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  	<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  	<link href="css/registrationStyles.css" type="text/css" rel="stylesheet"/>
+	
+</head>
+<body>
+
+	<nav class="cyan darken-3">
+	    <div class="nav-wrapper container">
+	    	<a href="index.html" class="brand-logo">SkillsOnDemand</a>
+	      	<ul id="nav-mobile" class="right hide-on-med-and-down">
+	        	<li><a href="login.html">Sign in</a></li>
+	   		</ul>
+		</div>
+	</nav>
+
+	<div id="registrationContainer" class="section">
+		<div class="container">
+			<h1>New Post</h1>
+		
+
+			<div class="row">
+			    <form class="col s6 offset-s3">
+			      	<div class="row">
+			        	<div class="input-field col s6">
+			          		<input placeholder="Post title" id="title" type="text" class="validate">
+			        	</div>
+			      	</div>
+			    	<div class="row">
+			        	<div class="input-field col s12">
+			          		<input placeholder="Description" id="description" type="text" class="validate">
+			        	</div>
+			        </div>
+			      	<div class="row">
+			      		<input class="btn-large" type="button" id="postButton" value="Post"/>
+			      		<input class="btn-large" type="button" id="cancelButton" value="Cancel"/>
+			      	</div>
+			    </form>
+			</div>
+
+		</div>
+		
+	</div>
+
+	<!--Import jQuery before materialize.js-->
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+
+</body>
+<script type="text/javascript">
+	$( document ).on('ready', function() {
+		$("#postButton").on("click", function(){
+			var jsonObject = {"title": $("#title").val(),
+                               "description": $("#description").val(),
+                           	   "action": "NEWPOST"};
+				$.ajax({
+                    type: "POST",
+                    url: "data/applicationLayer.php",
+                    dataType: "json",
+                    data: jsonObject,
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                    success: function(jsonData) {
+                        window.location.replace("searchSkills.html");
+                        alert(jsonData);
+                       
+                    },
+                    error: function(errorMsg){
+                        alert(errorMsg.statusText);
+                    }
+                });
+		});
+
+
+		$("#cancelButton").on("click", function(){
+			window.location.replace("index.html");
+		});
+	});
+</script
+</html>

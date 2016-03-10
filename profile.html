@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SoD Registration</title>
+	
+	<!-- CSS  -->
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  	<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  	<link href="css/registrationStyles.css" type="text/css" rel="stylesheet"/>
+	
+</head>
+<body>
+
+
+	<!-- Dropdown Structure 
+	<ul id="dropdown1" class="dropdown-content">
+	  <li><a href="#!">Logout</a></li>
+	</ul>
+	<nav>
+	  <div class="nav-wrapper container">
+	    <a href="#!" class="brand-logo">SkillsOnDemand</a>
+	    <ul class="right hide-on-med-and-down">
+	      <li><a href="index.html">Main</a></li>
+	      <li><a href="index.html">Components</a></li>
+	      
+	      <li id="accountName"><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right">arrow_drop_down</i></a></li>
+	    </ul>
+	  </div>
+	</nav>
+	<br />
+	<br />
+    -->
+
+
+
+    <!--
+
+            <a href="index.html" class="brand-logo">SkillsOnDemand</a>
+            
+            <a id="nav-mobile accountName" class='dropdown-button btn right hide-on-med-and-down' href='#' data-activates='dropdown1'></a>
+
+           
+            <ul id='dropdown1' class='dropdown-content'>
+                <li><a href="index.html">Main</a></li>
+                <li><a href="#!">two</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">Logout</a></li>
+            </ul>
+        
+        -->
+
+
+
+
+    <!--NAVBAR-->
+    <nav id='navBar'>
+        <div class="nav-wrapper container ">
+            <a href="index.html" class="brand-logo">SkillsOnDemand</a>
+            
+
+
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a id="accountName" href='#'></a></li>
+                <li><a id="menuDrop" class='btn-floating btn waves-effect waves-light dropdown-button right hide-on-med-and-down' href='#' data-activates='dropdown1'><i id='flechaDropdown' class="material-icons">arrow_drop_down</i></a></li>
+
+            </ul>
+
+
+
+            
+           
+            <ul id='dropdown1' class='dropdown-content'>
+                <li><a href="searchSkills.html">Search</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li class="divider"></li>
+                <li><a id='logout' href="#!">Logout</a></li>
+            </ul>    
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+	<div class="row container">
+    <div class="col s12">
+      <ul id="tabs" class="tabs z-depth-1">
+        <li id="tab1" class="tab col s3"><a class="active" href="#test1">Cart</a></li>
+        <li id="tab2" class="tab col s3"><a href="#test2">Past Orders</a></li>
+        <li id="tab3" class="tab col s3"><a href="#test3">Posts</a></li> 
+        <li id="tab4" class="tab col s3"><a href="#test4">Messages</a></li>
+        <li id="tab5" class="tab col s3"><a href="#test5">Account</a></li>
+      </ul>
+    </div>
+    <div id="test1" class="col s12">
+    	<div id="content-tab1">
+                <div id="forSaleContent">
+                    <table class="highlight centered" id="cartTable">
+                        <tr>
+                            <th>ID</th>
+                            <th>Skill</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                        </tr>
+                    </table>
+                    <a id="hire" class="waves-effect waves-light btn">Hire</a>	
+                </div>
+        </div>
+    </div>
+    <div id="test2" class="col s12">
+    	<div id="content-tab2">
+                <div id="forSaleContent">
+                    <table class="highlight centered" id="itemTable">
+                        <tr>
+                            <th>ID</th>
+                            <th>Skill</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                        </tr>
+                    </table>	
+                </div>
+        </div>
+    </div>
+    <div id="test3" class="col s12">
+        <div id="content-tab3">
+                <div id="userPosts">
+                    <table class="highlight centered" id="userPostsTable">
+                        <tr>
+                            <th>Skill</th>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </table>    
+                </div>
+        </div>
+        
+    </div>
+    <div id="test4" class="col s12">
+    	
+    	<div id="content-tab">
+                <div id="messagesTable">
+                    <table class="highlight centered" id="messageTable">
+                        <tr>
+                            <th>From</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                        </tr>
+                    </table>	
+                </div>
+        </div>
+
+        <!-- Modal Structure -->
+    <div id="modal1" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <form class="col s6 offset-s3">
+          
+              <div id="name" class="row">
+                 
+              </div>
+          
+              <div  id="email" class="row">
+
+              </div>
+
+              <div id="message" class="row">
+
+              </div>
+              
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="messageReply" class="materialize-textarea"></textarea>
+                    <label for="messageReply2">Reply</label>
+                </div>
+              </div>
+
+
+          
+    
+        
+
+          </form>
+      </div>
+      <div class="modal-footer">
+        <a id='submitMessage' href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Submit</a>
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
+      </div>
+    </div>
+	    
+    </div>
+     <div id="test5" class="col s12">
+    	<div id="registrationContainer" class="section">
+        <div class="container">
+            <h1>Tell us more about yourself</h1>
+            <h3>*None of this is required</h3>
+        
+            <div class="row">
+                <form class="col s12 ">
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <p>Year Birthdate</p>
+                            <input id="userYear" type="text" class="validate">
+                        </div>
+                    </div>
+                    
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <p>Country</p>
+                            <input id="userCountry" type="text" class="validate">
+                        </div>
+
+                        <div class="input-field col s6">
+                            <p>City</p>
+                            <input id="userCity" type="text" class="validate">
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <p>Website</p>
+                            <input id="userWebsite" type="text" class="validate">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <p>Phone</p>
+                            <input id="userPhone" type="text" class="validate">
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <p>University</p>
+                            <input id="userUniversity" type="text" class="validate">
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <p>What are some of your interests</p>
+                            <textarea id="userInterests" class="materialize-textarea"></textarea>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <p>Tell us more about yourself</p>
+                            <textarea id="userAdditional" class="materialize-textarea"></textarea>
+                        </div>
+                    </div>
+                    
+              
+                    
+                    <div class="row">
+                        <input class="btn-large" type="button" id="updateUserData" value="Save"/>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        
+    </div>
+    </div>
+  	</div>
+
+	<!--Import jQuery before materialize.js-->
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+
+</body>
+<script type="text/javascript">
+	$( document ).on('ready', function() {
+
+            $('#logout').on('click', function(){
+                $.ajax({
+                    type: 'POST',
+                    url: 'data/applicationLayer.php',
+                    dataType: 'json',
+                     data: {'action':'END_SES'},
+                     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                     success: function(jsonData) {
+                        window.location.replace('index.html');
+                    },
+                    error: function(errorMsg){
+                        alert(errorMsg.statusText);
+                        window.location.replace('index.html');
+                    }
+                });
+            });
+
+        $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 15 // Creates a dropdown of 15 years to control year
+        });
+
+		 $.ajax({
+                type: "POST",
+                url: "data/applicationLayer.php",
+                dataType: "json",
+                data: {'action':'NAME'},
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                success: function(jsonData) {
+
+
+                    $("#accountName").html("Welcome again " + jsonData + " ");
+
+
+                    $("#tab1").trigger("click");
+                },
+                error: function(errorMsg){
+                    alert(errorMsg.statusText);
+                }
+            });
+
+
+
+		// $("#loginButton").on("click", function(){
+		// 	var jsonObject = {"email": $("#email").val(),
+  //                              "password": $("#password").val(),
+  //                          	   "action": "LOGIN"};
+		// 	$.ajax({
+  //             	type: 'POST',
+  //             	url: 'data/applicationLayer.php',
+  //             	data: jsonObject,
+  //             	dataType:'json',
+  //             	headers:{'Content-Type': 'application/x-www-form-urlencoded'},
+  //             	success: function(jsonData){
+  //               	alert("Welcome back " + jsonData.fName + " " + jsonData.lName);
+  //               	alert("Redirect to somewhere else!");
+
+  //             	},
+  //             	error: function(errorMessage){
+  //               	alert(errorMessage.statusText);
+  //             	}
+              	
+  //          	});
+		// });
+
+
+		// $("#registerButton").on("click", function(){
+		// 	 window.location.replace("registration.html");
+		// });
+	
+	$("#tab1").on("click", function(){
+		//alert("tab 1");
+		$.ajax({
+            type: "POST",
+            url: "data/applicationLayer.php",
+            dataType: "json",
+            data: {'action':'CART', 'status':'P'},
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            success: function(jsonData) {
+                var tableRows = "";
+                $("#cartTable").find("td").remove();
+                if (jsonData.message == 'OK')
+                {
+                    //alert("datos");
+                    for(i = 0; i < jsonData.data.length; i ++)
+                    {
+                        tableRows += '<tr id=' + i + '><td>' + jsonData.data[i].orderId + '</td><td>' + jsonData.secondData[i].sTitle + '</td><td>' + jsonData.thirdData[i].name + ' ' + jsonData.thirdData[i].last + '</td><td>' + jsonData.secondData[i].sEmail + '</td></tr>';
+                    } 
+
+                    $("#cartTable").append(tableRows);
+                }
+                else
+                {
+                    //alert("nope");
+                     // $("#purchase").hide();
+                      $("#hire").hide();
+                     alert("Cart empty.");
+                }
+            },
+            error: function(errorMsg){
+                alert(errorMsg.statusText);
+            }
+        });
+	});
+	$("#tab2").on("click", function(){
+		//alert("tab 1");
+		$.ajax({
+            type: "POST",
+            url: "data/applicationLayer.php",
+            dataType: "json",
+            data: {'action':'CART', 'status':'B'},
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            success: function(jsonData) {
+                var tableRows = "";
+                $("#itemTable").find("td").remove();
+                if (jsonData.message == 'OK')
+                {
+                    //alert("datos");
+                    for(i = 0; i < jsonData.data.length; i ++)
+                    {
+                        tableRows += '<tr id=' + i + '><td>' + jsonData.data[i].orderId + '</td><td>' + jsonData.secondData[i].sTitle + '</td><td>' + jsonData.thirdData[i].name + ' ' + jsonData.thirdData[i].last + '</td><td>' + jsonData.secondData[i].sEmail + '</td></tr>';
+                    } 
+
+                    $("#itemTable").append(tableRows);
+                }
+                else
+                {
+                    //alert("nope");
+                     // $("#purchase").hide();
+                     // $("#cancelPurchase").hide();
+                     alert("No past orders.");
+                }
+            },
+            error: function(errorMsg){
+                alert(errorMsg.statusText);
+            }
+        });
+	});
+
+
+
+
+
+
+
+
+
+	$("#tab3").on("click", function(){
+        $.ajax({
+            type: "POST",
+            url: "data/applicationLayer.php",
+            dataType: "json",
+            data: {'action':'USER_POSTS'},
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            success: function(jsonData) {
+                var tableRows = "";
+                $("#userPostsTable").find("td").remove();
+                    //alert("datos");
+                    for(i=0; i < jsonData.length; i++)
+                    {
+                        tableRows += '<tr id=' + i + '><td>';
+                        tableRows += jsonData[i].title + '</td><td>';
+                        tableRows += jsonData[i].description + '</td><td>';
+                        tableRows += jsonData[i].category + '</td><td>';
+                        tableRows += jsonData[i].quantity + '</td></tr>';
+                    } 
+
+                    $("#userPostsTable").append(tableRows);
+                
+            },
+            error: function(errorMsg){
+                alert(errorMsg.statusText);
+            }
+        });
+
+	});
+
+
+
+
+
+	var globalEmail = "";
+
+
+
+	$("#tab4").on("click", function(){
+
+		$.ajax({
+            type: "POST",
+            url: "data/applicationLayer.php",
+            dataType: "json",
+            data: {'action': 'MSG'},
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            success: function(jsonData) {
+                var tableRows = "";
+                $("#messageTable").find("td").remove();
+                //alert(jsonData.message);
+                if (jsonData.message == 'OK')
+                {
+                    //alert("datos");
+                    var j = 0;
+                    for(i = 0; i < jsonData.data.length; i ++)
+                    {
+                    	
+                    	tableRows += '<tr id=' + i + '><td>' + jsonData.data[i].name[j].name + '</td><td>' + jsonData.data[i].email + '</td><td><a class="modal-trigger" href="#modal1" id="' + jsonData.data[i].id + '" type="button">View Message</a></td></tr>';
+                    }
+
+                    //alert(tableRows); 
+
+                    $("#messageTable").append(tableRows);
+                } else {
+                	alert(jsonData.message);
+                }
+            },
+            error: function(errorMsg){
+                alert(errorMsg.statusText);
+            }
+        });
+	});
+
+
+	$("#hire").on("click", function(){
+		$.ajax({
+            type: "POST",
+            url: "data/applicationLayer.php",
+            dataType: "json",
+            data: {'action': 'BUY'},
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            success: function(jsonData) {
+                alert(jsonData);
+                $("#tab2").trigger("click");
+            },
+            error: function(errorMsg){
+                alert(errorMsg.statusText);
+            }
+        });
+	});
+
+
+    $("#updateUserData").on('click',function(){
+        var jsonObject = {
+            'yearBdate': parseInt($('#userYear').val()),
+            'country': $('#userCountry').val(),
+            'city': $('#userCity').val(),
+            'website': $('#userWebsite').val(),
+            'phone': parseInt($('#userPhone').val()),
+            'university': $('#userUniversity').val(),
+            'interests': $('#userInterests').val(),
+            'additional': $('#userAdditional').val()
+        };
+
+
+        $.ajax({
+            type: 'POST',
+            url: 'data/applicationLayer.php',
+            dataType: 'json',
+            data: {'data':jsonObject, 'action':'UPDATE_PROFILE'},
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            success: function(jsonData) {  
+                alert(jsonData); 
+            },
+            error: function(errorMsg){
+                alert(errorMsg.statusText);
+            }
+        });
+    });
+
+
+    $("#tab5").on("click", function(){
+        $.ajax({
+          type: 'POST',
+          url: 'data/applicationLayer.php',
+          dataType: 'json',
+          data: {'action':'GET_USER_DATA'},
+          headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+          success: function(jsonData) {
+            //alert("User data received");
+            $("#userYear").val(jsonData[0].year);
+            $("#userCountry").val(jsonData[0].country);
+            $("#userCity").val(jsonData[0].city);
+            $("#userWebsite").val(jsonData[0].website);
+            $("#userPhone").val(jsonData[0].phone);
+            $("#userUniversity").val(jsonData[0].university);
+            $("#userInterests").val(jsonData[0].interests);
+            $("#userAdditional").val(jsonData[0].additional);
+
+            
+          },
+          error: function(errorMsg){
+            alert(errorMsg.statusText);
+          }
+        });
+    });
+
+   
+
+
+    $(document).on('click', 'button.showMessage', function(){
+      var abc = $(this).closest(".showMessage").attr("id");
+      
+  	});
+
+    $(document).on('click', 'a.modal-trigger', function(){
+    	var abc = $(this).closest(".modal-trigger").attr("id");
+      	$(this).leanModal();
+
+    	$.ajax({
+	      type: "POST",
+	      url: "data/applicationLayer.php",
+	      dataType: "json",
+	      data: {'action': 'MSG_ID', 'msgID' : abc},
+	      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+	      success: function(jsonData) {
+	        var tableRows = "";
+	        //$("#messageTable").find("td").remove();
+	        //alert(jsonData.message);
+	        if (jsonData.message == 'OK')
+	        {
+	          //alert("datos");
+	          var j = 0;
+	          $("#email").find("label").remove();
+	          for(var i = 0; i < 1; i ++)
+	          {
+	            tableRows += "<label id='labelEmail'>" + jsonData.data[i].email + "</label>";
+	            globalEmail = jsonData.data[i].email;
+	          }
+
+	          //alert(tableRows); 
+
+	          $("#email").append(tableRows);
+	          var tableRows = "";
+	          var j = 0;
+	          $("#name").find("h4").remove();
+	          for(var i = 0; i < 1; i ++)
+	          {
+	             tableRows += "<h4>From: " + jsonData.data[i].name[j].name + "</h4>";
+	          }
+
+	          //alert(tableRows); 
+
+	          $("#name").append(tableRows);
+	          var tableRows = "";
+	          var j = 0;
+	          $("#message").find("h5").remove();
+	          for(var i = 0; i < 1; i ++)
+	          {
+	             tableRows += "<h5>" + jsonData.data[i].message + "</h5>";
+	          }
+
+	          //alert(tableRows); 
+
+	          $("#message").append(tableRows);
+	          
+	        }
+
+	      },
+	      error: function(errorMsg){
+	        alert(errorMsg.statusText);
+	      }
+	    });
+
+      	
+      
+  	});
+
+  	$("#submitMessage").on("click", function(){
+  		var jsonObject = {
+            'reply': $('#messageReply').val(),
+            'sendTo': globalEmail
+      	};
+      	//alert($('#messageReply').val());
+      	$.ajax({
+	        type: 'POST',
+	        url: 'data/applicationLayer.php',
+	        dataType: 'json',
+	        data: {'data':jsonObject, 'action':'REPLY'},
+	        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+	        success: function(jsonData) {  
+	            alert("Message sent"); 
+	        },
+	        error: function(errorMsg){
+	            alert(errorMsg.statusText);
+	        }
+      	});
+
+  	});
+
+    //$('.modal-trigger').leanModal();
+
+
+
+
+	});
+</script
+</html>

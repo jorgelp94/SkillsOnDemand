@@ -1,0 +1,37 @@
+array(4) {
+  ["message"] => string(2) "OK"
+  ["data"] => array(3) {
+                  [0] => array(2) {
+                        ["orderId"] => string(1) "1"
+                        ["quantity"] => string(1) "1"}
+                  [1] => array(2) {
+                        ["orderId"] => string(1) "2"
+                        ["quantity"] => string(1) "1"}
+                  [2] => array(2) {
+                        ["orderId"] => string(1) "3"
+                        ["quantity"] => string(1) "1"}
+  }
+  ["secondData"] => array(3) {
+                  [0] => array(2) {
+                        ["sEmail"] => string(13) "gaby@algo.com"
+                        ["sTitle"] => string(4) "Food"}
+                  [1] => array(2) {
+                        ["sEmail"] => string(20) "aleperales@gmail.com"
+                        ["sTitle"] => string(15) "C++ Programming"}
+                  [2] => array(2) {
+                        ["sEmail"] => string(22) "jorgephptest@gmail.com"
+                        ["sTitle"] => string(3) "PHP"}
+  }
+  ["thirdData"] => array(3) {
+                  [0] => array(2) {
+                        ["name"] => string(4) "Gaby"
+                        ["last"] => string(7) "Rosales"}
+                  [1] => array(2) {
+                        ["name"] => string(3) "Ale"
+                        ["last"] => string(7) "Perales"}
+                  [2] => array(2) {
+                        ["name"] => string(5) "Jorge"
+                        ["last"] => string(7) "Perales"}
+  }
+}
+"Successful sale."

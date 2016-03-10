@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Skills On Demand</title>
+
+  <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/indexStyles.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <!--NAVBAR-->
+    <nav id='navBar'>
+        <div class="nav-wrapper container ">
+            <a href="index.html" class="brand-logo">SkillsOnDemand</a>
+            
+
+
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a id="accountName" href='#'></a></li>
+                <li><a id="menuDrop" class='btn-floating btn waves-effect waves-light dropdown-button right hide-on-med-and-down' href='#' data-activates='dropdown1'><i id='flechaDropdown' class="material-icons">arrow_drop_down</i></a></li>
+
+            </ul>
+
+
+
+            
+           
+            <ul id='dropdown1' class='dropdown-content'>
+                <li><a href="searchSkills.html">Search</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li class="divider"></li>
+                <li><a id='logout' href="#!">Logout</a></li>
+            </ul>    
+        </div>
+    </nav>
+
+  <!-- Modal Trigger -->
+    <a id="btnNewSkill" class="modal-trigger btn-floating btn-large waves-effect waves-light red" href="#modal1"><i class="material-icons">add</i></a>
+  
+  <!-- Modal Structure -->
+    <div id="modal1" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <form class="col s6 offset-s3">
+          
+              <div id="name" class="row">
+                 
+              </div>
+          
+              <div  id="message" class="row">
+
+              </div>
+
+              <div class="row">
+                <div class="input-field col s6">
+                    <input id="skillQuantity" type="text" class="validate">
+                    <label for="skillQuantity">Amount of people you could share your skill with</label>
+                </div>
+
+              </div>
+              
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="skillDescription" class="materialize-textarea"></textarea>
+                    <label for="skillDescription">Description</label>
+                </div>
+              </div>
+
+
+          
+    
+        
+
+          </form>
+      </div>
+      <div class="modal-footer">
+        <a id='submitSkill' href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Submit</a>
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancel</a>
+      </div>
+    </div>
+    
+
+
+
+
+
+
+
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+<script type="text/javascript">
+  $( document ).on('ready', function() {
+
+    $.ajax({
+                    type: "POST",
+                    url: "data/applicationLayer.php",
+                    dataType: "json",
+                    data: {'action': 'MSG'},
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                    success: function(jsonData) {
+                        var tableRows = "";
+                        $("#messageTable").find("td").remove();
+                        //alert(jsonData.message);
+                        if (jsonData.message == 'OK')
+                        {
+                            //alert("datos");
+                            var j = 0;
+                            for(var i = 0; i < 1; i ++)
+                            {
+                                tableRows += "<label>" + jsonData.data[i].email + "</label>";
+                            }
+
+                            //alert(tableRows); 
+
+                            $("#message").append(tableRows);
+                            var tableRows = "";
+                            var j = 0;
+                            for(var i = 0; i < 1; i ++)
+                            {
+                                tableRows += "<h4>" + jsonData.data[i].name[j].name + "</h4>";
+                            }
+
+                            //alert(tableRows); 
+
+                            $("#name").append(tableRows);
+                        }
+                    },
+                    error: function(errorMsg){
+                        alert(errorMsg.statusText);
+                    }
+                });
+
+    $('.modal-trigger').leanModal();
+    $('select').material_select(); 
+    
+  });
+
+
+
+
+  
+</script>
+</html>
